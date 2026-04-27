@@ -59,8 +59,8 @@ Watch the repo to follow the journey. 👀
 | ✅ Done | Auto datetime stamp for every entry |
 | ✅ Done | JSON persistence — data never lost |
 | ✅ Done | Multi-file modular architecture |
+| ✅ Done | View all transactions |
 | 🔨 Building | Add income tracking |
-| 🔨 Building | View all transactions |
 | 🔨 Building | Check current balance |
 | 🔨 Building | Delete wrong entries |
 | 📋 Planned | Monthly summary report |
@@ -134,6 +134,7 @@ No external libraries needed — pure standard library
 ```
 Phase 1 — CLI (Current)
     ✅ Core expense tracking
+    ✅ View all transactions
     🔨 Full CRUD operations
     📋 Reports and summaries
 
