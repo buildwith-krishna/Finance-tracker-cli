@@ -43,13 +43,30 @@ def show_expenses():
         print(f"\nTime : {time}")
         print(f"Amount : {details['Amount']}")
         print(f"Type : {details['Type']}")
-        print(f"Category : {details['Category']}")
-        print(f"Note : {details['Note']}")
+        if details['Type'] != 'income':
+            print(f"Category : {details['Category']}")
+            print(f"Note : {details['Note']}")
         print("\n")
 
-show_expenses()
+
+def add_income():
+    try:
+        income = int(input("Enter your income: ").strip())
+        time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        data = load()
+        data[time] = {
+            "Type": "income",
+            "Amount": income
+        }
+
+        save(data)
+        print("<<-Income saved->>")
+        
+    except ValueError:
+        print("Invalid input! Enter numbers only.")
 
 
+    
 
 
 
