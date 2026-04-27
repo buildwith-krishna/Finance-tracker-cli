@@ -35,8 +35,19 @@ def add_expense():
         print("Invalid input! Enter numbers.")
         return
                 
-add_expense()
 
+def show_expenses():
+    data = load()
+
+    for time, details in data.items():
+        print(f"\nTime : {time}")
+        print(f"Amount : {details['Amount']}")
+        print(f"Type : {details['Type']}")
+        print(f"Category : {details['Category']}")
+        print(f"Note : {details['Note']}")
+        print("\n")
+
+show_expenses()
 
 
 
