@@ -59,8 +59,9 @@ Watch the repo to follow the journey. 👀
 | ✅ Done | Auto datetime stamp for every entry |
 | ✅ Done | JSON persistence — data never lost |
 | ✅ Done | Multi-file modular architecture |
-| ✅ Done | View all transactions |
-| 🔨 Building | Add income tracking |
+| ✅ Done | View all transactions (income + expenses) |
+| ✅ Done | Separated main.py entry point with full menu |
+| ✅ Done | Add income tracking |
 | 🔨 Building | Check current balance |
 | 🔨 Building | Delete wrong entries |
 | 📋 Planned | Monthly summary report |
@@ -92,16 +93,14 @@ Every transaction is stored with a unique datetime key:
 ```json
 {
     "2026-04-27 13:45:22": {
-        "type": "expense",
-        "amount": 899,
-        "category": "clothing",
-        "note": "bought new shirt"
+        "Type": "expense",
+        "Amount": 899,
+        "Category": "clothing",
+        "Note": "bought new shirt"
     },
     "2026-04-27 14:00:10": {
-        "type": "income",
-        "amount": 40000,
-        "category": "salary",
-        "note": "april salary"
+        "Type": "income",
+        "Amount": 45600
     }
 }
 ```
@@ -118,7 +117,7 @@ cd Finance-tracker-cli
 
 **Run the app:**
 ```bash
-python tracker.py
+python main.py
 ```
 
 **Requirements:**
@@ -133,8 +132,9 @@ No external libraries needed — pure standard library
 
 ```
 Phase 1 — CLI (Current)
-    ✅ Core expense tracking
+    ✅ Core expense and income tracking
     ✅ View all transactions
+    ✅ Separated main.py entry point
     🔨 Full CRUD operations
     📋 Reports and summaries
 
