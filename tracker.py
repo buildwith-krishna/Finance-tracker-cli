@@ -66,8 +66,17 @@ def add_income():
         print("Invalid input! Enter numbers only.")
 
 
-    
-
-
+def check_balance():
+    data = load()
+    income = 0 
+    expenses = 0 
+    for time, details in data.items():
+        if details['Type'] == 'income':
+            income += details['Amount']
+        else:
+            expenses += details['Amount']
+            
+    balance = income - expenses
+    print(f"Current Balance: {balance}" + "\n")
 
 

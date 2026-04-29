@@ -62,7 +62,7 @@ Watch the repo to follow the journey. 👀
 | ✅ Done | View all transactions (income + expenses) |
 | ✅ Done | Separated main.py entry point with full menu |
 | ✅ Done | Add income tracking |
-| 🔨 Building | Check current balance |
+| ✅ Done | Check current balance (income - expenses) |
 | 🔨 Building | Delete wrong entries |
 | 📋 Planned | Monthly summary report |
 | 📋 Planned | Category-wise breakdown |
@@ -134,8 +134,9 @@ No external libraries needed — pure standard library
 Phase 1 — CLI (Current)
     ✅ Core expense and income tracking
     ✅ View all transactions
+    ✅ Check current balance
     ✅ Separated main.py entry point
-    🔨 Full CRUD operations
+    🔨 Delete wrong entries
     📋 Reports and summaries
 
 Phase 2 — API (July 2026)
