@@ -63,7 +63,7 @@ Watch the repo to follow the journey. 👀
 | ✅ Done | Separated main.py entry point with full menu |
 | ✅ Done | Add income tracking |
 | ✅ Done | Check current balance (income - expenses) |
-| 🔨 Building | Delete wrong entries |
+| ✅ Done | Delete wrong entries |
 | 📋 Planned | Monthly summary report |
 | 📋 Planned | Category-wise breakdown |
 | 📋 Planned | Budget limit warnings |
@@ -135,9 +135,10 @@ Phase 1 — CLI (Current)
     ✅ Core expense and income tracking
     ✅ View all transactions
     ✅ Check current balance
+    ✅ Delete wrong entries
     ✅ Separated main.py entry point
-    🔨 Delete wrong entries
-    📋 Reports and summaries
+    📋 Monthly summary report
+    📋 Category-wise breakdown
 
 Phase 2 — API (July 2026)
     📋 FastAPI backend

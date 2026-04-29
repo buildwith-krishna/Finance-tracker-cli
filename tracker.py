@@ -10,7 +10,7 @@ def add_expense():
             if category != "":
                 note = input("Enter a note: ").lower().strip()
                 if note!= "":
-                    time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                    time = datetime.now().strftime("%Y-%m-%d %H:%M:")
                     data = load()
                     data[time] = {
                         "Type": Type,
@@ -52,7 +52,7 @@ def show_expenses():
 def add_income():
     try:
         income = int(input("Enter your income: ").strip())
-        time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        time = datetime.now().strftime("%Y-%m-%d %H:%M:")
         data = load()
         data[time] = {
             "Type": "income",
@@ -79,4 +79,51 @@ def check_balance():
     balance = income - expenses
     print(f"Current Balance: {balance}" + "\n")
 
+
+def del_expense():
+    data = load()
+    for time, details in data.items():
+        print(f"\nTime: {time}")
+        print(f"Amount: {details['Amount']}")
+        print(f"Type: {details['Type']}")
+        if details['Type'] != 'income':
+            print(f"Category: {details['Category']}")
+            print(f"Note: {details['Note']}")
+        print("\n")
+
+    time = input("Enter time: ").strip()
+    if time != "":
+        if time in data:
+            user = input("Do you want to continue? (y/n) ").strip().lower()
+            if user != "n":   
+                del data[time]
+                save(data)
+                print("<-Entry Deleted->")
+            else:
+                return
+        else:
+            print("Time does not exist\n")
+            return
+    else:
+        print("Time cannot be empty!")
+        return
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 

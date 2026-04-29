@@ -2,6 +2,7 @@ from tracker import add_expense
 from tracker import show_expenses
 from tracker import add_income
 from tracker import check_balance
+from tracker import del_expense
 
 def main():
     print("<<--Finance Tracker-->>" + "\n")
@@ -12,7 +13,8 @@ def main():
         print("2. Add expense")
         print("3. Show all expenses")
         print("4. Check balance")
-        print("5. Exit")
+        print("5. Delete an entry")
+        print("6. Exit")
 
         user = input("Enter choice: ").strip()
 
@@ -30,12 +32,17 @@ def main():
                 check_balance()
                 print("\n")
             elif user == "5":
+                print("\n")
+                del_expense()
+                print("\n")                
+            elif user == "6":
                 print("Goodbye!\n")
                 break
             else:
-                print("Invalid choice! Enter 1 to 5\n")
+                print("Invalid choice! Enter 1 to 6\n")
         else:
             print("Choice cannot be empty!\n")
+
 
 main()
 
