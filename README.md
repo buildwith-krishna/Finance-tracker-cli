@@ -6,7 +6,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.x-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Termux%20%7C%20Linux%20%7C%20Windows-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Status-Active%20Development-orange?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Phase%201%20Complete-brightgreen?style=for-the-badge)
 ![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)
 ![Built On](https://img.shields.io/badge/Built%20On-Android%20Phone-red?style=for-the-badge&logo=android)
 
@@ -43,11 +43,9 @@
 ## 🚧 Project Status
 
 ```
-🟢 Active Development — Part of #100DaysOfCode Journey
+✅ Phase 1 Complete — Full CLI with CRUD operations
+🔜 Phase 2 Coming — FastAPI backend (July 2026)
 ```
-
-This project is being built **live and in public** — every commit is a real step forward.
-Watch the repo to follow the journey. 👀
 
 ---
 
@@ -64,6 +62,8 @@ Watch the repo to follow the journey. 👀
 | ✅ Done | Add income tracking |
 | ✅ Done | Check current balance (income - expenses) |
 | ✅ Done | Delete wrong entries |
+| ✅ Done | Update existing entries |
+| ✅ Done | Reusable helper functions (print_entry, get_entry) |
 | 📋 Planned | Monthly summary report |
 | 📋 Planned | Category-wise breakdown |
 | 📋 Planned | Budget limit warnings |
@@ -131,14 +131,14 @@ No external libraries needed — pure standard library
 ## 🗺️ Roadmap
 
 ```
-Phase 1 — CLI (Current)
+Phase 1 — CLI ✅ COMPLETE
     ✅ Core expense and income tracking
     ✅ View all transactions
     ✅ Check current balance
     ✅ Delete wrong entries
+    ✅ Update existing entries
+    ✅ Reusable helper functions
     ✅ Separated main.py entry point
-    📋 Monthly summary report
-    📋 Category-wise breakdown
 
 Phase 2 — API (July 2026)
     📋 FastAPI backend
