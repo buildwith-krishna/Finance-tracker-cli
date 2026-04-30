@@ -54,16 +54,21 @@
 | Status | Feature |
 |--------|---------|
 | ✅ Done | Add expense with amount, type, category, note |
+| ✅ Done | Add income with note |
 | ✅ Done | Auto datetime stamp for every entry |
 | ✅ Done | JSON persistence — data never lost |
 | ✅ Done | Multi-file modular architecture |
 | ✅ Done | View all transactions (income + expenses) |
+| ✅ Done | View only incomes |
+| ✅ Done | View only expenses |
 | ✅ Done | Separated main.py entry point with full menu |
-| ✅ Done | Add income tracking |
 | ✅ Done | Check current balance (income - expenses) |
 | ✅ Done | Delete wrong entries |
 | ✅ Done | Update existing entries |
+| ✅ Done | Type validation (income or expense only) |
+| ✅ Done | Category validation (food, shopping, transport, bills, other) |
 | ✅ Done | Reusable helper functions (print_entry, get_entry) |
+| ✅ Done | Unified add_entry() for both income and expense |
 | 📋 Planned | Monthly summary report |
 | 📋 Planned | Category-wise breakdown |
 | 📋 Planned | Budget limit warnings |
@@ -92,15 +97,16 @@ Every transaction is stored with a unique datetime key:
 
 ```json
 {
-    "2026-04-27 13:45:22": {
-        "Type": "expense",
-        "Amount": 899,
-        "Category": "clothing",
-        "Note": "bought new shirt"
-    },
-    "2026-04-27 14:00:10": {
+    "2026-04-30 22:22": {
         "Type": "income",
-        "Amount": 45600
+        "Amount": 75000,
+        "Note": "job salary"
+    },
+    "2026-04-30 22:27": {
+        "Type": "expense",
+        "Amount": 450,
+        "Category": "shopping",
+        "Note": "kela liya laudeyy"
     }
 }
 ```
@@ -133,12 +139,13 @@ No external libraries needed — pure standard library
 ```
 Phase 1 — CLI ✅ COMPLETE
     ✅ Core expense and income tracking
-    ✅ View all transactions
+    ✅ View all / only incomes / only expenses
     ✅ Check current balance
     ✅ Delete wrong entries
     ✅ Update existing entries
+    ✅ Type and category validation
     ✅ Reusable helper functions
-    ✅ Separated main.py entry point
+    ✅ Unified entry system
 
 Phase 2 — API (July 2026)
     📋 FastAPI backend
