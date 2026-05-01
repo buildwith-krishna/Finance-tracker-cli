@@ -244,5 +244,45 @@ def monthly_summary():
     print(f"Month's balance: {balance}\n")
 
 
+def category_breakdown():
+    data = load()
+    food_count = 0
+    food_spent = 0
+    shopping_count = 0 
+    shopping_spent = 0
+    transport_count = 0 
+    transport_spent = 0 
+    bills_count = 0 
+    bills_spent = 0 
+    other_count = 0
+    other_spent = 0
+    
+    for time, details in data.items():
+        if details['Type'] == "expense":
+            if details['Category'] == "food":
+                food_count += 1
+                food_spent += details['Amount']
+            if details['Category'] == "shopping":
+                shopping_count += 1
+                shopping_spent += details['Amount']
+            if details['Category'] == "transport":
+                transport_count += 1
+                transport_spent += details['Amount']
+            if details['Category'] == "bills":
+                bills_count += 1
+                bills_spent += details['Amount']
+            if details['Category'] == "other":
+                other_count += 1
+                other_spent += details['Amount']
 
-monthly_summary()
+    print(f"\nFood expenses = {food_count}\n")        
+    print(f"Total food expense = {food_spent}\n")        
+    print(f"Shopping expenses = {shopping_count}\n")        
+    print(f"Total shopping expense = {shopping_spent}\n")        
+    print(f"Transport expenses = {transport_count}\n")        
+    print(f"Total transport expenses = {transport_spent}\n")        
+    print(f"Bills expenses = {bills_count}\n")        
+    print(f"Total bills expense = {bills_spent}\n")        
+    print(f"Other expenses = {other_count}\n")        
+    print(f"Total other expense = {other_spent}\n")
+

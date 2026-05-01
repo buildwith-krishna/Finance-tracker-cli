@@ -9,6 +9,7 @@ from tracker import show_total_income
 from tracker import show_total_expenses
 from tracker import monthly_balance
 from tracker import monthly_summary
+from tracker import category_breakdown
 
 def main():
     print("<<--Finance Tracker-->>" + "\n")
@@ -23,7 +24,8 @@ def main():
         print("6. Show expenses")
         print("7. Show incomes")
         print("8. show monthly summary")
-        print("9. Exit")
+        print("9. show category wise sumamry")
+        print("10. Exit")
 
         user = input("Enter choice: ").strip()
 
@@ -55,8 +57,12 @@ def main():
                 print("\n")
             elif user == "8":
                 monthly_summary()
-                print("\n")       
+                print("\n")   
             elif user == "9":
+                print("\n")
+                category_breakdown()
+                print("\n")    
+            elif user == "10":
                 print("Goodbye!\n")
                 break
             else:
