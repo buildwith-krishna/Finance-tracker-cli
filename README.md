@@ -69,7 +69,7 @@
 | ✅ Done | Category validation (food, shopping, transport, bills, other) |
 | ✅ Done | Reusable helper functions (print_entry, get_entry) |
 | ✅ Done | Unified add_entry() for both income and expense |
-| 📋 Planned | Monthly summary report |
+| ✅ Done | Monthly summary (total income, expenses, balance by month) |
 | 📋 Planned | Category-wise breakdown |
 | 📋 Planned | Budget limit warnings |
 | 📋 Planned | FastAPI backend (Phase 2) |
@@ -146,6 +146,7 @@ Phase 1 — CLI ✅ COMPLETE
     ✅ Type and category validation
     ✅ Reusable helper functions
     ✅ Unified entry system
+    ✅ Monthly summary report
 
 Phase 2 — API (July 2026)
     📋 FastAPI backend

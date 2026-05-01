@@ -1,11 +1,14 @@
 from tracker import add_entry
 from tracker import show_all
-from tracker import add_income
 from tracker import check_balance
 from tracker import del_expense
 from tracker import update_entry
 from tracker import show_expenses
 from tracker import show_incomes
+from tracker import show_total_income
+from tracker import show_total_expenses
+from tracker import monthly_balance
+from tracker import monthly_summary
 
 def main():
     print("<<--Finance Tracker-->>" + "\n")
@@ -19,7 +22,8 @@ def main():
         print("5. Update an entry")
         print("6. Show expenses")
         print("7. Show incomes")
-        print("8. Exit")
+        print("8. show monthly summary")
+        print("9. Exit")
 
         user = input("Enter choice: ").strip()
 
@@ -48,8 +52,11 @@ def main():
             elif user == "7":
                 print("\n")
                 show_incomes()
-                print("\n")       
+                print("\n")
             elif user == "8":
+                monthly_summary()
+                print("\n")       
+            elif user == "9":
                 print("Goodbye!\n")
                 break
             else:

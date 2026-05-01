@@ -58,7 +58,7 @@ def add_entry():
                 category = input("Enter category: ").lower().strip()
                 if category in ["food", "shopping", "transport", "bills", "other"]:
                     if category != "":
-                        note = input("Enter a note:").strip()
+                        note = input("Enter a note: ").strip()
                         if note != "":
                             data[time] = {
                                 "Time": time,
@@ -81,32 +81,15 @@ def add_entry():
         print("Type should be either income or expense.")
         return
             
-
-            
+    
 def show_all():
     data = load()
 
     for time, details in data.items():
         print_entry(time, details)
+
+
         
-
-def add_income():
-    try:
-        income = int(input("Enter your income: ").strip())
-        time = datetime.now().strftime("%Y-%m-%d %H:%M:")
-        data = load()
-        data[time] = {
-            "Type": "income",
-            "Amount": income
-        }
-
-        save(data)
-        print("<<-Income saved->>")
-        
-    except ValueError:
-        print("Invalid input! Enter numbers only.")
-
-
 def check_balance():
     data = load()
     income = 0 
@@ -204,6 +187,62 @@ def show_expenses():
             print(f"Note: {details['Note']}")
         print("\n")
                     
+def get_month():
+    data = load()
+    month = input("Enter month (01-12) ").strip()
+    if month != "":
+        return month
+    else:
+        print("Month can't be empty!")
+        return None
+ 
+        
+def show_total_income(month):
+    data = load()
+    count_income = 0
+    total_income = 0 
+    for time, details in data.items():
+        if time[5:7] == month:
+            if details['Type'] == "income":
+                count_income += 1
+                total_income += details["Amount"]
+
+    return count_income, total_income
+
+
+def show_total_expenses(month):
+    data = load()
+    count_expenses = 0            
+    total_expense = 0            
+    for time, details in data.items():
+        if time[5:7] == month:
+            if details['Type'] == "expense":
+                count_expenses += 1
+                total_expense += details['Amount']
+
+    return count_expenses, total_expense
+
+def monthly_balance(total_expense, total_income):
+        balance = total_income - total_expense
+        return balance
+
+def monthly_summary():
+
+    month = get_month()
+    if month is None:
+        return
+
+    count_income, total_income = show_total_income(month)
+    count_expenses, total_expense = show_total_expenses(month)
+    balance = monthly_balance(total_expense, total_income)
+
+         
+    print(f"\nTotal number of Incomes: {count_income}\n")
+    print(f"Total Income: {total_income}\n")
+    print(f"Total number of Expenses: {count_expenses}\n")
+    print(f"Total Expense: {total_expense}\n")
+    print(f"Month's balance: {balance}\n")
 
 
 
+monthly_summary()
