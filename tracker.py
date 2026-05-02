@@ -29,7 +29,7 @@ def get_entry(prompt="Enter time: "):
 def add_entry():
 
     data = load()
-    time = datetime.now().strftime("%Y-%m-%d %H:%M:")
+    time = datetime.now().strftime("%Y-%m-%d %H:%M")
     Type = input("Enter type: ").lower().strip()
     if Type in ["income", "expense"]:
         if Type == "income": 
@@ -169,23 +169,22 @@ def show_incomes():
     data = load()
     for time, details in data.items():
         if details['Type'] == 'income':
-            print(f"Time: {time}")
+            print(f"\nTime: {time}")
             print(f"Type: income")
             print(f"Amount: {details['Amount']}")
-            print(f"Note: {details['Note']}")
-        print("\n")
+            print(f"Note: {details['Note']}\n")
+
 
 
 def show_expenses():
     data = load()
     for time, details in data.items():
         if details['Type'] == 'expense':
-            print(f"Time: {time}")
+            print(f"\nTime: {time}")
             print(f"Type: expense")
             print(f"Amount: {details['Amount']}")
             print(f"Category: {details['Category']}")
-            print(f"Note: {details['Note']}")
-        print("\n")
+            print(f"Note: {details['Note']}\n")
                     
 def get_month():
     data = load()
@@ -286,3 +285,21 @@ def category_breakdown():
     print(f"Other expenses = {other_count}\n")        
     print(f"Total other expense = {other_spent}\n")
 
+
+def show_by_date():
+    data = load()
+    date = input("Enter date: ").strip()
+    if date == "":
+        print("Date can't be empty!")
+        return
+
+    found = False
+    for time, details in data.items():
+        if date == time[0:10]:
+            found = True
+            print_entry(time, details)
+
+    if not found:
+        print("There are no entries on this date!")     
+
+                
