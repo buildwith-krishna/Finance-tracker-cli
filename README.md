@@ -17,7 +17,7 @@
 
 <br/>
 
-*Built entirely on Termux. No PC. No excuses.* 📱⚡
+*Built entirely on an Android phone. No PC. No excuses.* 📱⚡
 
 ---
 
@@ -70,7 +70,8 @@
 | ✅ Done | Reusable helper functions (print_entry, get_entry) |
 | ✅ Done | Unified add_entry() for both income and expense |
 | ✅ Done | Monthly summary (total income, expenses, balance by month) |
-| 📋 Planned | Category-wise breakdown |
+| ✅ Done | Category-wise breakdown |
+| ✅ Done | Search entries by date |
 | 📋 Planned | Budget limit warnings |
 | 📋 Planned | FastAPI backend (Phase 2) |
 | 📋 Planned | Web frontend (Phase 3) |
@@ -147,6 +148,8 @@ Phase 1 — CLI ✅ COMPLETE
     ✅ Reusable helper functions
     ✅ Unified entry system
     ✅ Monthly summary report
+    ✅ Category-wise breakdown
+    ✅ Search entries by date
 
 Phase 2 — API (July 2026)
     📋 FastAPI backend
@@ -167,7 +170,7 @@ This isn't just a finance tracker.
 
 It's proof that **constraints don't stop progress.**
 
-Built on a **Moto G72 phone** using **Termux** — no laptop, no fancy setup, no excuses. Just Python, determination, and a ceiling fan in 43° heat. 🌡️
+Built on an **Android phone** using **Termux** — no laptop, no fancy setup, no excuses. Just Python and determination.
 
 Every line of code in this repo was written on a touchscreen keyboard.
 
@@ -191,7 +194,3 @@ Previous projects:
 *Made with 💪 and way too much determination by Krishna Pandey*
 
 </div>
-
-
-
-
